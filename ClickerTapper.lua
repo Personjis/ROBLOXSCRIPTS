@@ -12,19 +12,19 @@ local b = w:CreateFolder("Farming")
 local c = w:CreateFolder("Rebirth list")
 
 
-b:Toggle("Auto BuyEggs",function(bool)
-    getgenv().autoEggs = bool
-    print('Auto Eggs is:', bool);
-    if bool then
-        AutoBeggs();
-    end
-end)
-
 b:Toggle("Auto Tap",function(bool)
     getgenv().autoTap = bool
     print('Auto Tap is:', bool);
     if bool then
         doTap();
+    end
+end)
+
+b:Toggle("Auto Egg",function(bool)
+    getgenv().autoEggs = bool
+    print('Auto Egg is:', bool);
+    if bool then
+        AutoBeggs();
     end
 end)
 
@@ -356,20 +356,19 @@ function Rebirth13()
 end
      
 
-
 function AutoBeggs()
     spawn(function()
         while getgenv().autoEggs == true do 
             local args = {
-            [1] = "Purchase One Egg",
-            [2] = 4,
-            [3] = {
-            ["Pets"] = {},
-            ["Hats"] = {}
+                [1] = "Purchase One Egg",
+                [2] = 4,
+                [3] = {
+                    ["Pets"] = {},
+                    ["Hats"] = {}
+                }
             }
-    
             game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-         wait()
+            wait()
         end
     end)
 end
