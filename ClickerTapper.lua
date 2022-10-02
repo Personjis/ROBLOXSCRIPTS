@@ -1,5 +1,6 @@
 getgenv().autoTap = false;
 getgenv().AutoRebirth = false;
+getgenv().autoEggs = false;
 
 
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
@@ -10,6 +11,14 @@ local b = w:CreateFolder("Farming")
 
 local c = w:CreateFolder("Rebirth list")
 
+
+b:Toggle("Auto BuyEggs",function(bool)
+    getgenv().autoEggs = bool
+    print('Auto Eggs is:', bool);
+    if bool then
+        AutoBeggs();
+    end
+end)
 
 b:Toggle("Auto Tap",function(bool)
     getgenv().autoTap = bool
@@ -346,4 +355,23 @@ function Rebirth13()
     end)
 end
      
+
+
+function AutoBeggs()
+    spawn(function()
+        while getgenv().autoEggs == true do 
+            local args = {
+            [1] = "Purchase One Egg",
+            [2] = 4,
+            [3] = {
+            ["Pets"] = {},
+            ["Hats"] = {}
+            }
+    
+            game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+         wait()
+        end
+    end)
+end
+
              
