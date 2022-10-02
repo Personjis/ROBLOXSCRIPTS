@@ -13,7 +13,16 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
-_G.Key = "1234"
+function KeyDisco()
+    OrionLib:MakeNotification({
+	    Name = "Coppied To Clipboard",
+	    Content = "Discord Link has been copied to Clipboard",
+	    Image = "rbxassetid://4483345998",
+	    Time = 5
+    })
+end
+
+_G.Key = "NewGenKey2022"
 _G.KeyInput = "string"
 
 function MakeScripthub()
@@ -83,3 +92,13 @@ local CredTab = Window:MakeTab({
 })
 
 CredTab:AddParagraph("Credits","Script Maker Robinx#4272                                                                Beta Testers --- oz#9457")
+
+Tab:AddButton({
+	Name = "Get Key",
+	Callback = function()
+        KeyDisco()
+        setclipboard("https://discord.gg/xreDjE5BGD")
+        toclipboard("https://discord.gg/xreDjE5BGD")
+  	end    
+})
+
