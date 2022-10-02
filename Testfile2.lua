@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Player = game.Players.LocalPlayer
-local Window = OrionLib:MakeWindow({Name = "Key System", HidePremium = false, SaveConfig = true, IntroEnabled = true})
+local Window = OrionLib:MakeWindow({Name = "Key System", HidePremium = false, SaveConfig = true, IntroEnabled = false})
 
 
 
@@ -50,11 +50,6 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-local MainTab= Window:MakeTab({
-	Name = "Credits",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
 
 Tab:AddTextbox({
 	Name = "Enter Key",
@@ -79,3 +74,11 @@ Tab:AddButton({
         end
   	end    
 })
+
+local CredTab = Window:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+CredTab:AddParagraph("Credits","Script Maker Robinx#4272                                                                Beta Testers --- oz#9457")
