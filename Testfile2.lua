@@ -50,6 +50,12 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local MainTab= Window:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 Tab:AddTextbox({
 	Name = "Enter Key",
 	Default = "",
