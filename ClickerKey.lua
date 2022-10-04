@@ -2,7 +2,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Player = game.Players.LocalPlayer
 local Window = OrionLib:MakeWindow({Name = "Key System", HidePremium = false, SaveConfig = true, IntroEnabled = false})
 
-
+-- KEy Is NewGenKey2022
 
 
 
@@ -22,7 +22,7 @@ function KeyDisco()
     })
 end
 
-_G.Key = "NewGenKey2022"
+_G.Key = "Gen445"
 _G.KeyInput = "string"
 
 function MakeScripthub()
